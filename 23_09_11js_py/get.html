@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+  </div>
+  <!-- <h1 id="prompt-text"></h1> -->
+  <!-- 서빙을 할 때 라벨 구분용 -->
+  <label for="inpt">why?</label>
+  <input type="text" name="inpt" id="inpt" placeholder="입력">
+  <script>
+    let promptText = document.getElementById('prompt-text');
+    let input = document.getElementById("inpt");
+    
+    console.dir(root.style);
+    
+    input.addEventListener("change", function() {
+      input.value;
+      if(input.value === "black") {
+        root.style.backgroundColor = "black";
+        root.style.width = "100px";
+        root.style.height = "100px";
+      } else if(input.value === "gray") {
+        root.style.backgroundColor = "gray";
+        root.style.width = "200px";
+        root.style.height = "200px";
+      } else if(input.value === "orange") {
+        root.style.backgroundColor = "orange";
+        root.style.width = "300px";
+        root.style.height = "300px";
+      }
+    })
+  </script>
+</body>
+</html>

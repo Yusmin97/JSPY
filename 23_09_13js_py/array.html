@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li>피카츄</li>
+      <li>라이츄</li>
+      <li>파이리</li>
+      <li>꼬부기</li>
+      <li>버터풀</li>
+      <li>야도란</li>
+      <li>피존투</li>
+    </ul>
+  </div>
+
+  <script>
+
+    let rainbow = [
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "indigo",
+      "purple"
+    ];
+
+    console.log(rainbow.length);
+    
+
+    let root = document.getElementById('root');
+    let liItems = document.getElementsByTagName('li');
+    console.log(liItems)
+
+    // i라는 값(변수)을 선언하고 i에 0을 선언한다.
+    // i < 7 i가 7보다 작을 동안에 명령문(for문)을 실행한다.
+    for(let i = 0; i < 7; i++) {
+      liItems[i].style.color = rainbow[i];
+      console.log(rainbow[rainbow.length-1]);
+    }
+
+    
+    
+
+  </script>
+</body>
+</html>

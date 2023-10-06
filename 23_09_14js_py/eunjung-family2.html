@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <!-- 은정씨에게 기초데이터를 받았다. -->
+    <!-- 은정씨 언니 오빠들 모두 li 태그에 담아보자. -->
+  </div>
+  <script>
+    let eunjungFamily = {
+      male : "이경배",
+      female : ["이은혜", "이은주", "이은정"],
+      cousin : [],
+    }
+    
+    let eunjungFamilyName = Object.keys(eunjungFamily);
+    let eunjungFamilyfemale = Object.values(eunjungFamily.female);
+
+    // console.log(eunjungFamilyName);
+    // console.log(eunjungFamily.male);
+    // console.log(eunjungFamily.female);
+    // console.log(eunjungFamilyfemale[0]);
+    // console.log(eunjungFamilyfemale[1]);
+    // console.log(eunjungFamilyfemale[2]);
+    // console.log(eunjungFamily[eunjungFamilyName[1]]);
+    // console.log(eunjungFamily[eunjungFamilyName[2]]);
+    
+    for(let key in eunjungFamily) {
+      
+    }
+
+
+    //let nameArray = [];
+    //nameArray.push(eunjungFamily.male);
+    //nameArray.push(eunjungFamily.female[0]);
+    //nameArray.push(eunjungFamily.female[1]);
+    //nameArray.push(eunjungFamily.female[2]);
+    //nameArray[0] = eunjungFamily[eunjungFamilyName[0]]; // 이경배
+    //nameArray[1] = eunjungFamily[eunjungFamilyName[1]][0]; // 이은혜
+    //nameArray[2] = eunjungFamily[eunjungFamilyName[1]][1]; // 이은주
+    //nameArray[3] = eunjungFamily[eunjungFamilyName[1]][2]; // 이은정
+    console.log(nameArray);
+
+    let root = document.getElementById('root');
+    let makeUlTag = document.createElement('ul');
+    makeUlTag.innerText = "은정이네 언니 오빠";
+    root.appendChild(makeUlTag);
+
+    console.log(eunjungFamily[eunjungFamilyName[0]]);
+     for(let i = 0; i < nameArray.length; i++) {
+       
+       let makeLiTag = document.createElement('li');
+       makeLiTag.innerText = nameArray[i];
+       makeUlTag.appendChild(makeLiTag);
+      } 
+      
+
+  </script>
+</body>
+</html>

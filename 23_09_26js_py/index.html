@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root" data-yuseungmin="1">
+      <ul>
+        <!-- * 사용자 정의 속성 -->
+        <li>items-1</li>
+        <li>items-2</li>
+        <li>items-3</li>
+        <li>items-4</li>
+        <li>items-5</li>
+        <li>items-6</li>
+        <li>items-7</li>
+        <li>items-8</li>
+        <li>items-9</li>
+        <li>items-10</li>
+      </ul>
+    </div>
+    <script>
+      const root = document.getElementById('root');
+      // console.dir(root.dataset.yuseungmin);
+      const ul = root.children[0];
+      console.log(ul);
+      ul.addEventListener('click', function (eventTarget) {
+        eventTarget.target.style.color = 'red';
+        console.dir(eventTarget);
+      });
+    </script>
+  </body>
+</html>

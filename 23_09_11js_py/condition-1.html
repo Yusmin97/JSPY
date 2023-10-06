@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <button>click</button>
+  </div>
+  <script>
+    let btn = window.document.body.children[0].children[0];
+    console.dir(btn);
+
+    let handler = true; // 초기화
+
+    btn.addEventListener("click", function() {
+      
+      if(handler === true) {
+        handler = false;
+        window.document.body.style.backgroundColor = "black";
+        btn.textContent = "Night";
+      } else {
+        handler = true;
+        window.document.body.style.backgroundColor = "red";
+        btn.textContent = "Day";
+      }
+
+      // if(handler === true) {
+      //   handler = false;
+      //   console.log(handler);
+      // } else {
+      //   handler = true;
+      //   console.log(handler);
+      // }
+      // //---------------------------------------------------
+      // if(handler === true) {
+      //   window.document.body.style.backgroundColor = "black";
+      // } else {
+      //   window.document.body.style.backgroundColor = "red";
+      // }
+      
+      // if(handler === true) {
+      //   btn.style.backgroundColor = "green";
+      // } else {
+      //   btn.style.backgroundColor = "blue";
+      // }
+    });
+  </script>
+</body>
+</html>

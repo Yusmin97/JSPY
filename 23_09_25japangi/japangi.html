@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+      #root > div:nth-child(1) > ul {
+        width: 60vw;
+        height: 100vh;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-wrap: wrap;
+        float: left;
+      }
+      #root > div:nth-child(1) > ul > li {
+        width: 7vw;
+        height: 7vw;
+        margin: 1vw;
+        text-align: center;
+        background-color: #f1f1f1;
+        list-style-type: none;
+      }
+      #root > div:nth-child(2) {
+        width: 0.3vw;
+        height: 90vh;
+        background-color: grey;
+        margin-top: 5vh;
+      }
+      #root > div:nth-child(3) {
+        width: 39.7vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #root > div:nth-child(3) > p {
+        width: 30vw;
+        height: 15vh;
+        color: #f66;
+        text-align: center;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 7vh;
+      }
+      #root > div:nth-child(3) > input:nth-of-type(1) {
+        width: 20vw;
+        height: 5vh;
+        background-color: #f1f1f1;
+        color: black;
+        margin-bottom: 5vh;
+      }
+      #root > div:nth-child(3) > input:nth-of-type(2) {
+        width: 15vw;
+        height: 15vw;
+        background-color: #f66;
+        border-radius: 50%;
+        border: none;
+      }
+      ::placeholder {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- li태그의 div태그 -->
+      <div>
+        <ul></ul>
+      </div>
+      <!-- 화면 나누는 막대기 -->
+      <div></div>
+      <div>
+        <p>Green Academy Vending Machine</p>
+        <input type="text" id="jPrice" placeholder="금액을 입력하세요" />
+        <input type="button" id="btn" value="버튼" />
+      </div>
+    </div>
+    <script>
+      const root = document.getElementById('root');
+      const getdiv = document.getElementsByTagName('div');
+      const text = document.getElementById('jPrice');
+      const textV = text.value;
+      const japangiBtn = document.getElementById('btn');
+      let price = [
+        '1000원',
+        '3000원',
+        '700원',
+        '1500원',
+        '2000원',
+        '500원',
+        '1300원',
+        '900원',
+        '4000원',
+        '2400원',
+        '300원',
+        '2100원',
+        '1900원',
+        '3200원',
+        '3700원',
+        '150원',
+        '1200원',
+        '3400원',
+        '600원',
+        '2300원',
+      ];
+      // ul태그안에 li태를 생성 한 후 price라는 배열의 값들을 price의 길이 만큼 li태그에 대입 된다
+      const ul = root.children[0].children[0];
+      // ul태그에 지정한 클래스 값을 tagUl지정을 하여 클래스 값을 가져온다.
+      // li태그를 생성한다.
+      // li태그를 생성 한 후 태그네임을 통해 li태그를 가져온다.
+      let tagLi = document.getElementsByTagName('li');
+      for (let i = 0; i < price.length; i++) {
+        let createLi = document.createElement('li');
+        let tagLi = document.getElementsByTagName('li');
+        ul.appendChild(createLi);
+        tagLi[i].textContent = price[i];
+      }
+      //지역 스코프와 전역 스코프의 차이점
+      let priceChoice;
+      ul.addEventListener('click', function (eventTarget) {
+        priceChoice = parseInt(eventTarget.target.innerText);
+        console.log(eventTarget.target.innerText);
+        console.log(typeof priceChoice);
+      });
+
+      japangiBtn.addEventListener('click', function (event) {
+        const textV = parseInt(text.value);
+        console.log(typeof textV);
+        if (textV >= priceChoice) {
+          let divGet = document.createElement('div');
+          root.appendChild(divGet);
+          // let divStyle = divGet.style;
+          function divstyle(x) {
+            x.style.width = '100vw';
+            x.style.height = '100vh';
+            x.style.display = 'flex';
+            x.style.flexDirection = 'column';
+            x.style.justifyContent = 'center';
+            x.style.position = 'absolute';
+            x.style.backdropFilter = 'blur(10px)';
+            x.style.fontSize = '4rem';
+            x.style.textAlign = 'center';
+          }
+          divGet.textContent = '을 얻었다.';
+          divstyle(divGet);
+          // divGet.style.width = '100vw';
+          // divGet.style.height = '100vh';
+          // divGet.style.display = 'flex';
+          // divGet.style.flexDirection = 'column';
+          // divGet.style.justifyContent = 'center';
+          // divGet.style.position = 'absolute';
+          // divGet.style.backdropFilter = 'blur(10px)';
+          // divGet.style.fontSize = '4rem';
+          // divGet.style.textAlign = 'center';
+          if (textV > priceChoice) {
+            console.log('잔돈이 있다');
+          }
+          if (textV === priceChoice) {
+            console.log('잔돈이 없다');
+          }
+        } else {
+          console.error('부족하다');
+        }
+      });
+    </script>
+  </body>
+</html>

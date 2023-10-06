@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <button>click</button>
+  </div>
+  <script>
+    var div1 = document.getElementsByTagName('div')[0];
+
+    let btn = window.document.body.children[0].children[0];
+    console.dir(btn);
+
+
+    let handler = true; // 초기화
+
+    btn.addEventListener("click", function() {
+      
+      if(handler === true) {
+        handler = false;
+        window.document.body.style.backgroundColor = "black";
+        div1.id = "Yu"
+      } else {
+        handler = true;
+        window.document.body.style.backgroundColor = "red";
+        div1.id = "root"
+      }
+    });
+  </script>
+</body>
+</html>

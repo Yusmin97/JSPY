@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      let root = document.getElementById('root');
+      console.log(root);
+
+      // function typeCheck(parameter) {
+      //   if (parameter === 'li') {
+      //     console.log('li 임');
+      //   } else {
+      //     console.error('원하는 값 아님');
+      //   }
+      // }
+
+      function tagMaker(tagName) {
+        if ((typeof tagName === 'li', 'p', 'h1')) {
+          return '<' + tagName + '>' + 'test' + '</' + tagName + '>';
+        } else {
+          console.error('원하는 타입 아님');
+        }
+      }
+      console.log(tagMaker(10));
+      console.log(tagMaker('p'));
+      console.log(tagMaker('h1'));
+      console.log(typeof tagMaker(10));
+
+      root.textContent = tagMaker();
+    </script>
+  </body>
+</html>
